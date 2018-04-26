@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -38,7 +37,7 @@ instance encodeAttributesString :: Encode AttributesString where encode = generi
 
 -- | <p>Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda) failed with an internal service error.</p>
 newtype BadGatewayException = BadGatewayException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeBadGatewayException :: Newtype BadGatewayException _
 derive instance repGenericBadGatewayException :: Generic BadGatewayException _
@@ -48,18 +47,18 @@ instance encodeBadGatewayException :: Encode BadGatewayException where encode = 
 
 -- | Constructs BadGatewayException from required parameters
 newBadGatewayException :: BadGatewayException
-newBadGatewayException  = BadGatewayException { "Message": (NullOrUndefined Nothing) }
+newBadGatewayException  = BadGatewayException { "Message": Nothing }
 
 -- | Constructs BadGatewayException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBadGatewayException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> BadGatewayException
-newBadGatewayException'  customize = (BadGatewayException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newBadGatewayException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> BadGatewayException
+newBadGatewayException'  customize = (BadGatewayException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
 newtype BadRequestException = BadRequestException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeBadRequestException :: Newtype BadRequestException _
 derive instance repGenericBadRequestException :: Generic BadRequestException _
@@ -69,12 +68,12 @@ instance encodeBadRequestException :: Encode BadRequestException where encode = 
 
 -- | Constructs BadRequestException from required parameters
 newBadRequestException :: BadRequestException
-newBadRequestException  = BadRequestException { "message": (NullOrUndefined Nothing) }
+newBadRequestException  = BadRequestException { "message": Nothing }
 
 -- | Constructs BadRequestException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBadRequestException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> BadRequestException
-newBadRequestException'  customize = (BadRequestException <<< customize) { "message": (NullOrUndefined Nothing) }
+newBadRequestException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> BadRequestException
+newBadRequestException'  customize = (BadRequestException <<< customize) { "message": Nothing }
 
 
 
@@ -147,7 +146,7 @@ instance encodeButtonValueStringWithLength :: Encode ButtonValueStringWithLength
 
 -- | <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
 newtype ConflictException = ConflictException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeConflictException :: Newtype ConflictException _
 derive instance repGenericConflictException :: Generic ConflictException _
@@ -157,12 +156,12 @@ instance encodeConflictException :: Encode ConflictException where encode = gene
 
 -- | Constructs ConflictException from required parameters
 newConflictException :: ConflictException
-newConflictException  = ConflictException { "message": (NullOrUndefined Nothing) }
+newConflictException  = ConflictException { "message": Nothing }
 
 -- | Constructs ConflictException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConflictException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ConflictException
-newConflictException'  customize = (ConflictException <<< customize) { "message": (NullOrUndefined Nothing) }
+newConflictException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ConflictException
+newConflictException'  customize = (ConflictException <<< customize) { "message": Nothing }
 
 
 
@@ -177,7 +176,7 @@ instance encodeContentType :: Encode ContentType where encode = genericEncode op
 
 -- | <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p> <ul> <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li> <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li> <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li> </ul>
 newtype DependencyFailedException = DependencyFailedException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeDependencyFailedException :: Newtype DependencyFailedException _
 derive instance repGenericDependencyFailedException :: Generic DependencyFailedException _
@@ -187,12 +186,12 @@ instance encodeDependencyFailedException :: Encode DependencyFailedException whe
 
 -- | Constructs DependencyFailedException from required parameters
 newDependencyFailedException :: DependencyFailedException
-newDependencyFailedException  = DependencyFailedException { "Message": (NullOrUndefined Nothing) }
+newDependencyFailedException  = DependencyFailedException { "Message": Nothing }
 
 -- | Constructs DependencyFailedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDependencyFailedException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> DependencyFailedException
-newDependencyFailedException'  customize = (DependencyFailedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDependencyFailedException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> DependencyFailedException
+newDependencyFailedException'  customize = (DependencyFailedException <<< customize) { "Message": Nothing }
 
 
 
@@ -216,11 +215,11 @@ instance encodeErrorMessage :: Encode ErrorMessage where encode = genericEncode 
 
 -- | <p>Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text. </p>
 newtype GenericAttachment = GenericAttachment 
-  { "title" :: NullOrUndefined (StringWithLength)
-  , "subTitle" :: NullOrUndefined (StringWithLength)
-  , "attachmentLinkUrl" :: NullOrUndefined (StringUrlWithLength)
-  , "imageUrl" :: NullOrUndefined (StringUrlWithLength)
-  , "buttons" :: NullOrUndefined (ListOfButtons')
+  { "title" :: Maybe (StringWithLength)
+  , "subTitle" :: Maybe (StringWithLength)
+  , "attachmentLinkUrl" :: Maybe (StringUrlWithLength)
+  , "imageUrl" :: Maybe (StringUrlWithLength)
+  , "buttons" :: Maybe (ListOfButtons')
   }
 derive instance newtypeGenericAttachment :: Newtype GenericAttachment _
 derive instance repGenericGenericAttachment :: Generic GenericAttachment _
@@ -230,12 +229,12 @@ instance encodeGenericAttachment :: Encode GenericAttachment where encode = gene
 
 -- | Constructs GenericAttachment from required parameters
 newGenericAttachment :: GenericAttachment
-newGenericAttachment  = GenericAttachment { "attachmentLinkUrl": (NullOrUndefined Nothing), "buttons": (NullOrUndefined Nothing), "imageUrl": (NullOrUndefined Nothing), "subTitle": (NullOrUndefined Nothing), "title": (NullOrUndefined Nothing) }
+newGenericAttachment  = GenericAttachment { "attachmentLinkUrl": Nothing, "buttons": Nothing, "imageUrl": Nothing, "subTitle": Nothing, "title": Nothing }
 
 -- | Constructs GenericAttachment's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGenericAttachment' :: ( { "title" :: NullOrUndefined (StringWithLength) , "subTitle" :: NullOrUndefined (StringWithLength) , "attachmentLinkUrl" :: NullOrUndefined (StringUrlWithLength) , "imageUrl" :: NullOrUndefined (StringUrlWithLength) , "buttons" :: NullOrUndefined (ListOfButtons') } -> {"title" :: NullOrUndefined (StringWithLength) , "subTitle" :: NullOrUndefined (StringWithLength) , "attachmentLinkUrl" :: NullOrUndefined (StringUrlWithLength) , "imageUrl" :: NullOrUndefined (StringUrlWithLength) , "buttons" :: NullOrUndefined (ListOfButtons') } ) -> GenericAttachment
-newGenericAttachment'  customize = (GenericAttachment <<< customize) { "attachmentLinkUrl": (NullOrUndefined Nothing), "buttons": (NullOrUndefined Nothing), "imageUrl": (NullOrUndefined Nothing), "subTitle": (NullOrUndefined Nothing), "title": (NullOrUndefined Nothing) }
+newGenericAttachment' :: ( { "title" :: Maybe (StringWithLength) , "subTitle" :: Maybe (StringWithLength) , "attachmentLinkUrl" :: Maybe (StringUrlWithLength) , "imageUrl" :: Maybe (StringUrlWithLength) , "buttons" :: Maybe (ListOfButtons') } -> {"title" :: Maybe (StringWithLength) , "subTitle" :: Maybe (StringWithLength) , "attachmentLinkUrl" :: Maybe (StringUrlWithLength) , "imageUrl" :: Maybe (StringUrlWithLength) , "buttons" :: Maybe (ListOfButtons') } ) -> GenericAttachment
+newGenericAttachment'  customize = (GenericAttachment <<< customize) { "attachmentLinkUrl": Nothing, "buttons": Nothing, "imageUrl": Nothing, "subTitle": Nothing, "title": Nothing }
 
 
 
@@ -259,7 +258,7 @@ instance encodeIntentName :: Encode IntentName where encode = genericEncode opti
 
 -- | <p>Internal service error. Retry the call.</p>
 newtype InternalFailureException = InternalFailureException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInternalFailureException :: Newtype InternalFailureException _
 derive instance repGenericInternalFailureException :: Generic InternalFailureException _
@@ -269,19 +268,19 @@ instance encodeInternalFailureException :: Encode InternalFailureException where
 
 -- | Constructs InternalFailureException from required parameters
 newInternalFailureException :: InternalFailureException
-newInternalFailureException  = InternalFailureException { "message": (NullOrUndefined Nothing) }
+newInternalFailureException  = InternalFailureException { "message": Nothing }
 
 -- | Constructs InternalFailureException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalFailureException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InternalFailureException
-newInternalFailureException'  customize = (InternalFailureException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInternalFailureException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InternalFailureException
+newInternalFailureException'  customize = (InternalFailureException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Exceeded a limit.</p>
 newtype LimitExceededException = LimitExceededException 
-  { "retryAfterSeconds" :: NullOrUndefined (String)
-  , "message" :: NullOrUndefined (String)
+  { "retryAfterSeconds" :: Maybe (String)
+  , "message" :: Maybe (String)
   }
 derive instance newtypeLimitExceededException :: Newtype LimitExceededException _
 derive instance repGenericLimitExceededException :: Generic LimitExceededException _
@@ -291,18 +290,18 @@ instance encodeLimitExceededException :: Encode LimitExceededException where enc
 
 -- | Constructs LimitExceededException from required parameters
 newLimitExceededException :: LimitExceededException
-newLimitExceededException  = LimitExceededException { "message": (NullOrUndefined Nothing), "retryAfterSeconds": (NullOrUndefined Nothing) }
+newLimitExceededException  = LimitExceededException { "message": Nothing, "retryAfterSeconds": Nothing }
 
 -- | Constructs LimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLimitExceededException' :: ( { "retryAfterSeconds" :: NullOrUndefined (String) , "message" :: NullOrUndefined (String) } -> {"retryAfterSeconds" :: NullOrUndefined (String) , "message" :: NullOrUndefined (String) } ) -> LimitExceededException
-newLimitExceededException'  customize = (LimitExceededException <<< customize) { "message": (NullOrUndefined Nothing), "retryAfterSeconds": (NullOrUndefined Nothing) }
+newLimitExceededException' :: ( { "retryAfterSeconds" :: Maybe (String) , "message" :: Maybe (String) } -> {"retryAfterSeconds" :: Maybe (String) , "message" :: Maybe (String) } ) -> LimitExceededException
+newLimitExceededException'  customize = (LimitExceededException <<< customize) { "message": Nothing, "retryAfterSeconds": Nothing }
 
 
 
 -- | <p>This exception is not used.</p>
 newtype LoopDetectedException = LoopDetectedException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeLoopDetectedException :: Newtype LoopDetectedException _
 derive instance repGenericLoopDetectedException :: Generic LoopDetectedException _
@@ -312,12 +311,12 @@ instance encodeLoopDetectedException :: Encode LoopDetectedException where encod
 
 -- | Constructs LoopDetectedException from required parameters
 newLoopDetectedException :: LoopDetectedException
-newLoopDetectedException  = LoopDetectedException { "Message": (NullOrUndefined Nothing) }
+newLoopDetectedException  = LoopDetectedException { "Message": Nothing }
 
 -- | Constructs LoopDetectedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLoopDetectedException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> LoopDetectedException
-newLoopDetectedException'  customize = (LoopDetectedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newLoopDetectedException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> LoopDetectedException
+newLoopDetectedException'  customize = (LoopDetectedException <<< customize) { "Message": Nothing }
 
 
 
@@ -332,7 +331,7 @@ instance encodeMessageFormatType :: Encode MessageFormatType where encode = gene
 
 -- | <p>The accept header in the request does not have a valid value.</p>
 newtype NotAcceptableException = NotAcceptableException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeNotAcceptableException :: Newtype NotAcceptableException _
 derive instance repGenericNotAcceptableException :: Generic NotAcceptableException _
@@ -342,18 +341,18 @@ instance encodeNotAcceptableException :: Encode NotAcceptableException where enc
 
 -- | Constructs NotAcceptableException from required parameters
 newNotAcceptableException :: NotAcceptableException
-newNotAcceptableException  = NotAcceptableException { "message": (NullOrUndefined Nothing) }
+newNotAcceptableException  = NotAcceptableException { "message": Nothing }
 
 -- | Constructs NotAcceptableException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotAcceptableException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> NotAcceptableException
-newNotAcceptableException'  customize = (NotAcceptableException <<< customize) { "message": (NullOrUndefined Nothing) }
+newNotAcceptableException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> NotAcceptableException
+newNotAcceptableException'  customize = (NotAcceptableException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
 newtype NotFoundException = NotFoundException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeNotFoundException :: Newtype NotFoundException _
 derive instance repGenericNotFoundException :: Generic NotFoundException _
@@ -363,12 +362,12 @@ instance encodeNotFoundException :: Encode NotFoundException where encode = gene
 
 -- | Constructs NotFoundException from required parameters
 newNotFoundException :: NotFoundException
-newNotFoundException  = NotFoundException { "message": (NullOrUndefined Nothing) }
+newNotFoundException  = NotFoundException { "message": Nothing }
 
 -- | Constructs NotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotFoundException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> NotFoundException
-newNotFoundException'  customize = (NotFoundException <<< customize) { "message": (NullOrUndefined Nothing) }
+newNotFoundException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> NotFoundException
+newNotFoundException'  customize = (NotFoundException <<< customize) { "message": Nothing }
 
 
 
@@ -376,10 +375,10 @@ newtype PostContentRequest = PostContentRequest
   { "botName" :: (BotName)
   , "botAlias" :: (BotAlias)
   , "userId" :: (UserId)
-  , "sessionAttributes" :: NullOrUndefined (AttributesString)
-  , "requestAttributes" :: NullOrUndefined (AttributesString)
+  , "sessionAttributes" :: Maybe (AttributesString)
+  , "requestAttributes" :: Maybe (AttributesString)
   , "contentType" :: (HttpContentType)
-  , "accept" :: NullOrUndefined (Accept)
+  , "accept" :: Maybe (Accept)
   , "inputStream" :: (BlobStream)
   }
 derive instance newtypePostContentRequest :: Newtype PostContentRequest _
@@ -390,26 +389,26 @@ instance encodePostContentRequest :: Encode PostContentRequest where encode = ge
 
 -- | Constructs PostContentRequest from required parameters
 newPostContentRequest :: BotAlias -> BotName -> HttpContentType -> BlobStream -> UserId -> PostContentRequest
-newPostContentRequest _botAlias _botName _contentType _inputStream _userId = PostContentRequest { "botAlias": _botAlias, "botName": _botName, "contentType": _contentType, "inputStream": _inputStream, "userId": _userId, "accept": (NullOrUndefined Nothing), "requestAttributes": (NullOrUndefined Nothing), "sessionAttributes": (NullOrUndefined Nothing) }
+newPostContentRequest _botAlias _botName _contentType _inputStream _userId = PostContentRequest { "botAlias": _botAlias, "botName": _botName, "contentType": _contentType, "inputStream": _inputStream, "userId": _userId, "accept": Nothing, "requestAttributes": Nothing, "sessionAttributes": Nothing }
 
 -- | Constructs PostContentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPostContentRequest' :: BotAlias -> BotName -> HttpContentType -> BlobStream -> UserId -> ( { "botName" :: (BotName) , "botAlias" :: (BotAlias) , "userId" :: (UserId) , "sessionAttributes" :: NullOrUndefined (AttributesString) , "requestAttributes" :: NullOrUndefined (AttributesString) , "contentType" :: (HttpContentType) , "accept" :: NullOrUndefined (Accept) , "inputStream" :: (BlobStream) } -> {"botName" :: (BotName) , "botAlias" :: (BotAlias) , "userId" :: (UserId) , "sessionAttributes" :: NullOrUndefined (AttributesString) , "requestAttributes" :: NullOrUndefined (AttributesString) , "contentType" :: (HttpContentType) , "accept" :: NullOrUndefined (Accept) , "inputStream" :: (BlobStream) } ) -> PostContentRequest
-newPostContentRequest' _botAlias _botName _contentType _inputStream _userId customize = (PostContentRequest <<< customize) { "botAlias": _botAlias, "botName": _botName, "contentType": _contentType, "inputStream": _inputStream, "userId": _userId, "accept": (NullOrUndefined Nothing), "requestAttributes": (NullOrUndefined Nothing), "sessionAttributes": (NullOrUndefined Nothing) }
+newPostContentRequest' :: BotAlias -> BotName -> HttpContentType -> BlobStream -> UserId -> ( { "botName" :: (BotName) , "botAlias" :: (BotAlias) , "userId" :: (UserId) , "sessionAttributes" :: Maybe (AttributesString) , "requestAttributes" :: Maybe (AttributesString) , "contentType" :: (HttpContentType) , "accept" :: Maybe (Accept) , "inputStream" :: (BlobStream) } -> {"botName" :: (BotName) , "botAlias" :: (BotAlias) , "userId" :: (UserId) , "sessionAttributes" :: Maybe (AttributesString) , "requestAttributes" :: Maybe (AttributesString) , "contentType" :: (HttpContentType) , "accept" :: Maybe (Accept) , "inputStream" :: (BlobStream) } ) -> PostContentRequest
+newPostContentRequest' _botAlias _botName _contentType _inputStream _userId customize = (PostContentRequest <<< customize) { "botAlias": _botAlias, "botName": _botName, "contentType": _contentType, "inputStream": _inputStream, "userId": _userId, "accept": Nothing, "requestAttributes": Nothing, "sessionAttributes": Nothing }
 
 
 
 newtype PostContentResponse = PostContentResponse 
-  { "contentType" :: NullOrUndefined (HttpContentType)
-  , "intentName" :: NullOrUndefined (IntentName)
-  , "slots" :: NullOrUndefined (String)
-  , "sessionAttributes" :: NullOrUndefined (String)
-  , "message" :: NullOrUndefined (Text)
-  , "messageFormat" :: NullOrUndefined (MessageFormatType)
-  , "dialogState" :: NullOrUndefined (DialogState)
-  , "slotToElicit" :: NullOrUndefined (String)
-  , "inputTranscript" :: NullOrUndefined (String)
-  , "audioStream" :: NullOrUndefined (BlobStream)
+  { "contentType" :: Maybe (HttpContentType)
+  , "intentName" :: Maybe (IntentName)
+  , "slots" :: Maybe (String)
+  , "sessionAttributes" :: Maybe (String)
+  , "message" :: Maybe (Text)
+  , "messageFormat" :: Maybe (MessageFormatType)
+  , "dialogState" :: Maybe (DialogState)
+  , "slotToElicit" :: Maybe (String)
+  , "inputTranscript" :: Maybe (String)
+  , "audioStream" :: Maybe (BlobStream)
   }
 derive instance newtypePostContentResponse :: Newtype PostContentResponse _
 derive instance repGenericPostContentResponse :: Generic PostContentResponse _
@@ -419,12 +418,12 @@ instance encodePostContentResponse :: Encode PostContentResponse where encode = 
 
 -- | Constructs PostContentResponse from required parameters
 newPostContentResponse :: PostContentResponse
-newPostContentResponse  = PostContentResponse { "audioStream": (NullOrUndefined Nothing), "contentType": (NullOrUndefined Nothing), "dialogState": (NullOrUndefined Nothing), "inputTranscript": (NullOrUndefined Nothing), "intentName": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing), "messageFormat": (NullOrUndefined Nothing), "sessionAttributes": (NullOrUndefined Nothing), "slotToElicit": (NullOrUndefined Nothing), "slots": (NullOrUndefined Nothing) }
+newPostContentResponse  = PostContentResponse { "audioStream": Nothing, "contentType": Nothing, "dialogState": Nothing, "inputTranscript": Nothing, "intentName": Nothing, "message": Nothing, "messageFormat": Nothing, "sessionAttributes": Nothing, "slotToElicit": Nothing, "slots": Nothing }
 
 -- | Constructs PostContentResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPostContentResponse' :: ( { "contentType" :: NullOrUndefined (HttpContentType) , "intentName" :: NullOrUndefined (IntentName) , "slots" :: NullOrUndefined (String) , "sessionAttributes" :: NullOrUndefined (String) , "message" :: NullOrUndefined (Text) , "messageFormat" :: NullOrUndefined (MessageFormatType) , "dialogState" :: NullOrUndefined (DialogState) , "slotToElicit" :: NullOrUndefined (String) , "inputTranscript" :: NullOrUndefined (String) , "audioStream" :: NullOrUndefined (BlobStream) } -> {"contentType" :: NullOrUndefined (HttpContentType) , "intentName" :: NullOrUndefined (IntentName) , "slots" :: NullOrUndefined (String) , "sessionAttributes" :: NullOrUndefined (String) , "message" :: NullOrUndefined (Text) , "messageFormat" :: NullOrUndefined (MessageFormatType) , "dialogState" :: NullOrUndefined (DialogState) , "slotToElicit" :: NullOrUndefined (String) , "inputTranscript" :: NullOrUndefined (String) , "audioStream" :: NullOrUndefined (BlobStream) } ) -> PostContentResponse
-newPostContentResponse'  customize = (PostContentResponse <<< customize) { "audioStream": (NullOrUndefined Nothing), "contentType": (NullOrUndefined Nothing), "dialogState": (NullOrUndefined Nothing), "inputTranscript": (NullOrUndefined Nothing), "intentName": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing), "messageFormat": (NullOrUndefined Nothing), "sessionAttributes": (NullOrUndefined Nothing), "slotToElicit": (NullOrUndefined Nothing), "slots": (NullOrUndefined Nothing) }
+newPostContentResponse' :: ( { "contentType" :: Maybe (HttpContentType) , "intentName" :: Maybe (IntentName) , "slots" :: Maybe (String) , "sessionAttributes" :: Maybe (String) , "message" :: Maybe (Text) , "messageFormat" :: Maybe (MessageFormatType) , "dialogState" :: Maybe (DialogState) , "slotToElicit" :: Maybe (String) , "inputTranscript" :: Maybe (String) , "audioStream" :: Maybe (BlobStream) } -> {"contentType" :: Maybe (HttpContentType) , "intentName" :: Maybe (IntentName) , "slots" :: Maybe (String) , "sessionAttributes" :: Maybe (String) , "message" :: Maybe (Text) , "messageFormat" :: Maybe (MessageFormatType) , "dialogState" :: Maybe (DialogState) , "slotToElicit" :: Maybe (String) , "inputTranscript" :: Maybe (String) , "audioStream" :: Maybe (BlobStream) } ) -> PostContentResponse
+newPostContentResponse'  customize = (PostContentResponse <<< customize) { "audioStream": Nothing, "contentType": Nothing, "dialogState": Nothing, "inputTranscript": Nothing, "intentName": Nothing, "message": Nothing, "messageFormat": Nothing, "sessionAttributes": Nothing, "slotToElicit": Nothing, "slots": Nothing }
 
 
 
@@ -432,8 +431,8 @@ newtype PostTextRequest = PostTextRequest
   { "botName" :: (BotName)
   , "botAlias" :: (BotAlias)
   , "userId" :: (UserId)
-  , "sessionAttributes" :: NullOrUndefined (StringMap)
-  , "requestAttributes" :: NullOrUndefined (StringMap)
+  , "sessionAttributes" :: Maybe (StringMap)
+  , "requestAttributes" :: Maybe (StringMap)
   , "inputText" :: (Text)
   }
 derive instance newtypePostTextRequest :: Newtype PostTextRequest _
@@ -444,24 +443,24 @@ instance encodePostTextRequest :: Encode PostTextRequest where encode = genericE
 
 -- | Constructs PostTextRequest from required parameters
 newPostTextRequest :: BotAlias -> BotName -> Text -> UserId -> PostTextRequest
-newPostTextRequest _botAlias _botName _inputText _userId = PostTextRequest { "botAlias": _botAlias, "botName": _botName, "inputText": _inputText, "userId": _userId, "requestAttributes": (NullOrUndefined Nothing), "sessionAttributes": (NullOrUndefined Nothing) }
+newPostTextRequest _botAlias _botName _inputText _userId = PostTextRequest { "botAlias": _botAlias, "botName": _botName, "inputText": _inputText, "userId": _userId, "requestAttributes": Nothing, "sessionAttributes": Nothing }
 
 -- | Constructs PostTextRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPostTextRequest' :: BotAlias -> BotName -> Text -> UserId -> ( { "botName" :: (BotName) , "botAlias" :: (BotAlias) , "userId" :: (UserId) , "sessionAttributes" :: NullOrUndefined (StringMap) , "requestAttributes" :: NullOrUndefined (StringMap) , "inputText" :: (Text) } -> {"botName" :: (BotName) , "botAlias" :: (BotAlias) , "userId" :: (UserId) , "sessionAttributes" :: NullOrUndefined (StringMap) , "requestAttributes" :: NullOrUndefined (StringMap) , "inputText" :: (Text) } ) -> PostTextRequest
-newPostTextRequest' _botAlias _botName _inputText _userId customize = (PostTextRequest <<< customize) { "botAlias": _botAlias, "botName": _botName, "inputText": _inputText, "userId": _userId, "requestAttributes": (NullOrUndefined Nothing), "sessionAttributes": (NullOrUndefined Nothing) }
+newPostTextRequest' :: BotAlias -> BotName -> Text -> UserId -> ( { "botName" :: (BotName) , "botAlias" :: (BotAlias) , "userId" :: (UserId) , "sessionAttributes" :: Maybe (StringMap) , "requestAttributes" :: Maybe (StringMap) , "inputText" :: (Text) } -> {"botName" :: (BotName) , "botAlias" :: (BotAlias) , "userId" :: (UserId) , "sessionAttributes" :: Maybe (StringMap) , "requestAttributes" :: Maybe (StringMap) , "inputText" :: (Text) } ) -> PostTextRequest
+newPostTextRequest' _botAlias _botName _inputText _userId customize = (PostTextRequest <<< customize) { "botAlias": _botAlias, "botName": _botName, "inputText": _inputText, "userId": _userId, "requestAttributes": Nothing, "sessionAttributes": Nothing }
 
 
 
 newtype PostTextResponse = PostTextResponse 
-  { "intentName" :: NullOrUndefined (IntentName)
-  , "slots" :: NullOrUndefined (StringMap)
-  , "sessionAttributes" :: NullOrUndefined (StringMap)
-  , "message" :: NullOrUndefined (Text)
-  , "messageFormat" :: NullOrUndefined (MessageFormatType)
-  , "dialogState" :: NullOrUndefined (DialogState)
-  , "slotToElicit" :: NullOrUndefined (String)
-  , "responseCard" :: NullOrUndefined (ResponseCard)
+  { "intentName" :: Maybe (IntentName)
+  , "slots" :: Maybe (StringMap)
+  , "sessionAttributes" :: Maybe (StringMap)
+  , "message" :: Maybe (Text)
+  , "messageFormat" :: Maybe (MessageFormatType)
+  , "dialogState" :: Maybe (DialogState)
+  , "slotToElicit" :: Maybe (String)
+  , "responseCard" :: Maybe (ResponseCard)
   }
 derive instance newtypePostTextResponse :: Newtype PostTextResponse _
 derive instance repGenericPostTextResponse :: Generic PostTextResponse _
@@ -471,18 +470,18 @@ instance encodePostTextResponse :: Encode PostTextResponse where encode = generi
 
 -- | Constructs PostTextResponse from required parameters
 newPostTextResponse :: PostTextResponse
-newPostTextResponse  = PostTextResponse { "dialogState": (NullOrUndefined Nothing), "intentName": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing), "messageFormat": (NullOrUndefined Nothing), "responseCard": (NullOrUndefined Nothing), "sessionAttributes": (NullOrUndefined Nothing), "slotToElicit": (NullOrUndefined Nothing), "slots": (NullOrUndefined Nothing) }
+newPostTextResponse  = PostTextResponse { "dialogState": Nothing, "intentName": Nothing, "message": Nothing, "messageFormat": Nothing, "responseCard": Nothing, "sessionAttributes": Nothing, "slotToElicit": Nothing, "slots": Nothing }
 
 -- | Constructs PostTextResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPostTextResponse' :: ( { "intentName" :: NullOrUndefined (IntentName) , "slots" :: NullOrUndefined (StringMap) , "sessionAttributes" :: NullOrUndefined (StringMap) , "message" :: NullOrUndefined (Text) , "messageFormat" :: NullOrUndefined (MessageFormatType) , "dialogState" :: NullOrUndefined (DialogState) , "slotToElicit" :: NullOrUndefined (String) , "responseCard" :: NullOrUndefined (ResponseCard) } -> {"intentName" :: NullOrUndefined (IntentName) , "slots" :: NullOrUndefined (StringMap) , "sessionAttributes" :: NullOrUndefined (StringMap) , "message" :: NullOrUndefined (Text) , "messageFormat" :: NullOrUndefined (MessageFormatType) , "dialogState" :: NullOrUndefined (DialogState) , "slotToElicit" :: NullOrUndefined (String) , "responseCard" :: NullOrUndefined (ResponseCard) } ) -> PostTextResponse
-newPostTextResponse'  customize = (PostTextResponse <<< customize) { "dialogState": (NullOrUndefined Nothing), "intentName": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing), "messageFormat": (NullOrUndefined Nothing), "responseCard": (NullOrUndefined Nothing), "sessionAttributes": (NullOrUndefined Nothing), "slotToElicit": (NullOrUndefined Nothing), "slots": (NullOrUndefined Nothing) }
+newPostTextResponse' :: ( { "intentName" :: Maybe (IntentName) , "slots" :: Maybe (StringMap) , "sessionAttributes" :: Maybe (StringMap) , "message" :: Maybe (Text) , "messageFormat" :: Maybe (MessageFormatType) , "dialogState" :: Maybe (DialogState) , "slotToElicit" :: Maybe (String) , "responseCard" :: Maybe (ResponseCard) } -> {"intentName" :: Maybe (IntentName) , "slots" :: Maybe (StringMap) , "sessionAttributes" :: Maybe (StringMap) , "message" :: Maybe (Text) , "messageFormat" :: Maybe (MessageFormatType) , "dialogState" :: Maybe (DialogState) , "slotToElicit" :: Maybe (String) , "responseCard" :: Maybe (ResponseCard) } ) -> PostTextResponse
+newPostTextResponse'  customize = (PostTextResponse <<< customize) { "dialogState": Nothing, "intentName": Nothing, "message": Nothing, "messageFormat": Nothing, "responseCard": Nothing, "sessionAttributes": Nothing, "slotToElicit": Nothing, "slots": Nothing }
 
 
 
 -- | <p>The input speech is too long.</p>
 newtype RequestTimeoutException = RequestTimeoutException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeRequestTimeoutException :: Newtype RequestTimeoutException _
 derive instance repGenericRequestTimeoutException :: Generic RequestTimeoutException _
@@ -492,20 +491,20 @@ instance encodeRequestTimeoutException :: Encode RequestTimeoutException where e
 
 -- | Constructs RequestTimeoutException from required parameters
 newRequestTimeoutException :: RequestTimeoutException
-newRequestTimeoutException  = RequestTimeoutException { "message": (NullOrUndefined Nothing) }
+newRequestTimeoutException  = RequestTimeoutException { "message": Nothing }
 
 -- | Constructs RequestTimeoutException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRequestTimeoutException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> RequestTimeoutException
-newRequestTimeoutException'  customize = (RequestTimeoutException <<< customize) { "message": (NullOrUndefined Nothing) }
+newRequestTimeoutException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> RequestTimeoutException
+newRequestTimeoutException'  customize = (RequestTimeoutException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).</p>
 newtype ResponseCard = ResponseCard 
-  { "version" :: NullOrUndefined (String)
-  , "contentType" :: NullOrUndefined (ContentType)
-  , "genericAttachments" :: NullOrUndefined (GenericAttachmentList')
+  { "version" :: Maybe (String)
+  , "contentType" :: Maybe (ContentType)
+  , "genericAttachments" :: Maybe (GenericAttachmentList')
   }
 derive instance newtypeResponseCard :: Newtype ResponseCard _
 derive instance repGenericResponseCard :: Generic ResponseCard _
@@ -515,12 +514,12 @@ instance encodeResponseCard :: Encode ResponseCard where encode = genericEncode 
 
 -- | Constructs ResponseCard from required parameters
 newResponseCard :: ResponseCard
-newResponseCard  = ResponseCard { "contentType": (NullOrUndefined Nothing), "genericAttachments": (NullOrUndefined Nothing), "version": (NullOrUndefined Nothing) }
+newResponseCard  = ResponseCard { "contentType": Nothing, "genericAttachments": Nothing, "version": Nothing }
 
 -- | Constructs ResponseCard's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResponseCard' :: ( { "version" :: NullOrUndefined (String) , "contentType" :: NullOrUndefined (ContentType) , "genericAttachments" :: NullOrUndefined (GenericAttachmentList') } -> {"version" :: NullOrUndefined (String) , "contentType" :: NullOrUndefined (ContentType) , "genericAttachments" :: NullOrUndefined (GenericAttachmentList') } ) -> ResponseCard
-newResponseCard'  customize = (ResponseCard <<< customize) { "contentType": (NullOrUndefined Nothing), "genericAttachments": (NullOrUndefined Nothing), "version": (NullOrUndefined Nothing) }
+newResponseCard' :: ( { "version" :: Maybe (String) , "contentType" :: Maybe (ContentType) , "genericAttachments" :: Maybe (GenericAttachmentList') } -> {"version" :: Maybe (String) , "contentType" :: Maybe (ContentType) , "genericAttachments" :: Maybe (GenericAttachmentList') } ) -> ResponseCard
+newResponseCard'  customize = (ResponseCard <<< customize) { "contentType": Nothing, "genericAttachments": Nothing, "version": Nothing }
 
 
 
@@ -562,7 +561,7 @@ instance encodeText :: Encode Text where encode = genericEncode options
 
 -- | <p>The Content-Type header (<code>PostContent</code> API) has an invalid value. </p>
 newtype UnsupportedMediaTypeException = UnsupportedMediaTypeException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeUnsupportedMediaTypeException :: Newtype UnsupportedMediaTypeException _
 derive instance repGenericUnsupportedMediaTypeException :: Generic UnsupportedMediaTypeException _
@@ -572,12 +571,12 @@ instance encodeUnsupportedMediaTypeException :: Encode UnsupportedMediaTypeExcep
 
 -- | Constructs UnsupportedMediaTypeException from required parameters
 newUnsupportedMediaTypeException :: UnsupportedMediaTypeException
-newUnsupportedMediaTypeException  = UnsupportedMediaTypeException { "message": (NullOrUndefined Nothing) }
+newUnsupportedMediaTypeException  = UnsupportedMediaTypeException { "message": Nothing }
 
 -- | Constructs UnsupportedMediaTypeException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnsupportedMediaTypeException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> UnsupportedMediaTypeException
-newUnsupportedMediaTypeException'  customize = (UnsupportedMediaTypeException <<< customize) { "message": (NullOrUndefined Nothing) }
+newUnsupportedMediaTypeException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> UnsupportedMediaTypeException
+newUnsupportedMediaTypeException'  customize = (UnsupportedMediaTypeException <<< customize) { "message": Nothing }
 
 
 

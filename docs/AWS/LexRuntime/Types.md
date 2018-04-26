@@ -42,7 +42,7 @@ Encode AttributesString
 
 ``` purescript
 newtype BadGatewayException
-  = BadGatewayException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = BadGatewayException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 <p>Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda) failed with an internal service error.</p>
@@ -67,7 +67,7 @@ Constructs BadGatewayException from required parameters
 #### `newBadGatewayException'`
 
 ``` purescript
-newBadGatewayException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> BadGatewayException
+newBadGatewayException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> BadGatewayException
 ```
 
 Constructs BadGatewayException's fields from required parameters
@@ -76,7 +76,7 @@ Constructs BadGatewayException's fields from required parameters
 
 ``` purescript
 newtype BadRequestException
-  = BadRequestException { message :: NullOrUndefined (String) }
+  = BadRequestException { message :: Maybe (String) }
 ```
 
 <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
@@ -101,7 +101,7 @@ Constructs BadRequestException from required parameters
 #### `newBadRequestException'`
 
 ``` purescript
-newBadRequestException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> BadRequestException
+newBadRequestException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> BadRequestException
 ```
 
 Constructs BadRequestException's fields from required parameters
@@ -224,7 +224,7 @@ Encode ButtonValueStringWithLength
 
 ``` purescript
 newtype ConflictException
-  = ConflictException { message :: NullOrUndefined (String) }
+  = ConflictException { message :: Maybe (String) }
 ```
 
 <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
@@ -249,7 +249,7 @@ Constructs ConflictException from required parameters
 #### `newConflictException'`
 
 ``` purescript
-newConflictException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ConflictException
+newConflictException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ConflictException
 ```
 
 Constructs ConflictException's fields from required parameters
@@ -274,7 +274,7 @@ Encode ContentType
 
 ``` purescript
 newtype DependencyFailedException
-  = DependencyFailedException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = DependencyFailedException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p> <ul> <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li> <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li> <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li> </ul>
@@ -299,7 +299,7 @@ Constructs DependencyFailedException from required parameters
 #### `newDependencyFailedException'`
 
 ``` purescript
-newDependencyFailedException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> DependencyFailedException
+newDependencyFailedException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> DependencyFailedException
 ```
 
 Constructs DependencyFailedException's fields from required parameters
@@ -340,7 +340,7 @@ Encode ErrorMessage
 
 ``` purescript
 newtype GenericAttachment
-  = GenericAttachment { title :: NullOrUndefined (StringWithLength), subTitle :: NullOrUndefined (StringWithLength), attachmentLinkUrl :: NullOrUndefined (StringUrlWithLength), imageUrl :: NullOrUndefined (StringUrlWithLength), buttons :: NullOrUndefined (ListOfButtons') }
+  = GenericAttachment { title :: Maybe (StringWithLength), subTitle :: Maybe (StringWithLength), attachmentLinkUrl :: Maybe (StringUrlWithLength), imageUrl :: Maybe (StringUrlWithLength), buttons :: Maybe (ListOfButtons') }
 ```
 
 <p>Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text. </p>
@@ -365,7 +365,7 @@ Constructs GenericAttachment from required parameters
 #### `newGenericAttachment'`
 
 ``` purescript
-newGenericAttachment' :: ({ title :: NullOrUndefined (StringWithLength), subTitle :: NullOrUndefined (StringWithLength), attachmentLinkUrl :: NullOrUndefined (StringUrlWithLength), imageUrl :: NullOrUndefined (StringUrlWithLength), buttons :: NullOrUndefined (ListOfButtons') } -> { title :: NullOrUndefined (StringWithLength), subTitle :: NullOrUndefined (StringWithLength), attachmentLinkUrl :: NullOrUndefined (StringUrlWithLength), imageUrl :: NullOrUndefined (StringUrlWithLength), buttons :: NullOrUndefined (ListOfButtons') }) -> GenericAttachment
+newGenericAttachment' :: ({ title :: Maybe (StringWithLength), subTitle :: Maybe (StringWithLength), attachmentLinkUrl :: Maybe (StringUrlWithLength), imageUrl :: Maybe (StringUrlWithLength), buttons :: Maybe (ListOfButtons') } -> { title :: Maybe (StringWithLength), subTitle :: Maybe (StringWithLength), attachmentLinkUrl :: Maybe (StringUrlWithLength), imageUrl :: Maybe (StringUrlWithLength), buttons :: Maybe (ListOfButtons') }) -> GenericAttachment
 ```
 
 Constructs GenericAttachment's fields from required parameters
@@ -406,7 +406,7 @@ Encode IntentName
 
 ``` purescript
 newtype InternalFailureException
-  = InternalFailureException { message :: NullOrUndefined (String) }
+  = InternalFailureException { message :: Maybe (String) }
 ```
 
 <p>Internal service error. Retry the call.</p>
@@ -431,7 +431,7 @@ Constructs InternalFailureException from required parameters
 #### `newInternalFailureException'`
 
 ``` purescript
-newInternalFailureException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InternalFailureException
+newInternalFailureException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InternalFailureException
 ```
 
 Constructs InternalFailureException's fields from required parameters
@@ -440,7 +440,7 @@ Constructs InternalFailureException's fields from required parameters
 
 ``` purescript
 newtype LimitExceededException
-  = LimitExceededException { retryAfterSeconds :: NullOrUndefined (String), message :: NullOrUndefined (String) }
+  = LimitExceededException { retryAfterSeconds :: Maybe (String), message :: Maybe (String) }
 ```
 
 <p>Exceeded a limit.</p>
@@ -465,7 +465,7 @@ Constructs LimitExceededException from required parameters
 #### `newLimitExceededException'`
 
 ``` purescript
-newLimitExceededException' :: ({ retryAfterSeconds :: NullOrUndefined (String), message :: NullOrUndefined (String) } -> { retryAfterSeconds :: NullOrUndefined (String), message :: NullOrUndefined (String) }) -> LimitExceededException
+newLimitExceededException' :: ({ retryAfterSeconds :: Maybe (String), message :: Maybe (String) } -> { retryAfterSeconds :: Maybe (String), message :: Maybe (String) }) -> LimitExceededException
 ```
 
 Constructs LimitExceededException's fields from required parameters
@@ -474,7 +474,7 @@ Constructs LimitExceededException's fields from required parameters
 
 ``` purescript
 newtype LoopDetectedException
-  = LoopDetectedException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = LoopDetectedException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 <p>This exception is not used.</p>
@@ -499,7 +499,7 @@ Constructs LoopDetectedException from required parameters
 #### `newLoopDetectedException'`
 
 ``` purescript
-newLoopDetectedException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> LoopDetectedException
+newLoopDetectedException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> LoopDetectedException
 ```
 
 Constructs LoopDetectedException's fields from required parameters
@@ -524,7 +524,7 @@ Encode MessageFormatType
 
 ``` purescript
 newtype NotAcceptableException
-  = NotAcceptableException { message :: NullOrUndefined (String) }
+  = NotAcceptableException { message :: Maybe (String) }
 ```
 
 <p>The accept header in the request does not have a valid value.</p>
@@ -549,7 +549,7 @@ Constructs NotAcceptableException from required parameters
 #### `newNotAcceptableException'`
 
 ``` purescript
-newNotAcceptableException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> NotAcceptableException
+newNotAcceptableException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> NotAcceptableException
 ```
 
 Constructs NotAcceptableException's fields from required parameters
@@ -558,7 +558,7 @@ Constructs NotAcceptableException's fields from required parameters
 
 ``` purescript
 newtype NotFoundException
-  = NotFoundException { message :: NullOrUndefined (String) }
+  = NotFoundException { message :: Maybe (String) }
 ```
 
 <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
@@ -583,7 +583,7 @@ Constructs NotFoundException from required parameters
 #### `newNotFoundException'`
 
 ``` purescript
-newNotFoundException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> NotFoundException
+newNotFoundException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> NotFoundException
 ```
 
 Constructs NotFoundException's fields from required parameters
@@ -592,7 +592,7 @@ Constructs NotFoundException's fields from required parameters
 
 ``` purescript
 newtype PostContentRequest
-  = PostContentRequest { botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: NullOrUndefined (AttributesString), requestAttributes :: NullOrUndefined (AttributesString), contentType :: HttpContentType, accept :: NullOrUndefined (Accept), inputStream :: BlobStream }
+  = PostContentRequest { botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: Maybe (AttributesString), requestAttributes :: Maybe (AttributesString), contentType :: HttpContentType, accept :: Maybe (Accept), inputStream :: BlobStream }
 ```
 
 ##### Instances
@@ -615,7 +615,7 @@ Constructs PostContentRequest from required parameters
 #### `newPostContentRequest'`
 
 ``` purescript
-newPostContentRequest' :: BotAlias -> BotName -> HttpContentType -> BlobStream -> UserId -> ({ botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: NullOrUndefined (AttributesString), requestAttributes :: NullOrUndefined (AttributesString), contentType :: HttpContentType, accept :: NullOrUndefined (Accept), inputStream :: BlobStream } -> { botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: NullOrUndefined (AttributesString), requestAttributes :: NullOrUndefined (AttributesString), contentType :: HttpContentType, accept :: NullOrUndefined (Accept), inputStream :: BlobStream }) -> PostContentRequest
+newPostContentRequest' :: BotAlias -> BotName -> HttpContentType -> BlobStream -> UserId -> ({ botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: Maybe (AttributesString), requestAttributes :: Maybe (AttributesString), contentType :: HttpContentType, accept :: Maybe (Accept), inputStream :: BlobStream } -> { botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: Maybe (AttributesString), requestAttributes :: Maybe (AttributesString), contentType :: HttpContentType, accept :: Maybe (Accept), inputStream :: BlobStream }) -> PostContentRequest
 ```
 
 Constructs PostContentRequest's fields from required parameters
@@ -624,7 +624,7 @@ Constructs PostContentRequest's fields from required parameters
 
 ``` purescript
 newtype PostContentResponse
-  = PostContentResponse { contentType :: NullOrUndefined (HttpContentType), intentName :: NullOrUndefined (IntentName), slots :: NullOrUndefined (String), sessionAttributes :: NullOrUndefined (String), message :: NullOrUndefined (Text), messageFormat :: NullOrUndefined (MessageFormatType), dialogState :: NullOrUndefined (DialogState), slotToElicit :: NullOrUndefined (String), inputTranscript :: NullOrUndefined (String), audioStream :: NullOrUndefined (BlobStream) }
+  = PostContentResponse { contentType :: Maybe (HttpContentType), intentName :: Maybe (IntentName), slots :: Maybe (String), sessionAttributes :: Maybe (String), message :: Maybe (Text), messageFormat :: Maybe (MessageFormatType), dialogState :: Maybe (DialogState), slotToElicit :: Maybe (String), inputTranscript :: Maybe (String), audioStream :: Maybe (BlobStream) }
 ```
 
 ##### Instances
@@ -647,7 +647,7 @@ Constructs PostContentResponse from required parameters
 #### `newPostContentResponse'`
 
 ``` purescript
-newPostContentResponse' :: ({ contentType :: NullOrUndefined (HttpContentType), intentName :: NullOrUndefined (IntentName), slots :: NullOrUndefined (String), sessionAttributes :: NullOrUndefined (String), message :: NullOrUndefined (Text), messageFormat :: NullOrUndefined (MessageFormatType), dialogState :: NullOrUndefined (DialogState), slotToElicit :: NullOrUndefined (String), inputTranscript :: NullOrUndefined (String), audioStream :: NullOrUndefined (BlobStream) } -> { contentType :: NullOrUndefined (HttpContentType), intentName :: NullOrUndefined (IntentName), slots :: NullOrUndefined (String), sessionAttributes :: NullOrUndefined (String), message :: NullOrUndefined (Text), messageFormat :: NullOrUndefined (MessageFormatType), dialogState :: NullOrUndefined (DialogState), slotToElicit :: NullOrUndefined (String), inputTranscript :: NullOrUndefined (String), audioStream :: NullOrUndefined (BlobStream) }) -> PostContentResponse
+newPostContentResponse' :: ({ contentType :: Maybe (HttpContentType), intentName :: Maybe (IntentName), slots :: Maybe (String), sessionAttributes :: Maybe (String), message :: Maybe (Text), messageFormat :: Maybe (MessageFormatType), dialogState :: Maybe (DialogState), slotToElicit :: Maybe (String), inputTranscript :: Maybe (String), audioStream :: Maybe (BlobStream) } -> { contentType :: Maybe (HttpContentType), intentName :: Maybe (IntentName), slots :: Maybe (String), sessionAttributes :: Maybe (String), message :: Maybe (Text), messageFormat :: Maybe (MessageFormatType), dialogState :: Maybe (DialogState), slotToElicit :: Maybe (String), inputTranscript :: Maybe (String), audioStream :: Maybe (BlobStream) }) -> PostContentResponse
 ```
 
 Constructs PostContentResponse's fields from required parameters
@@ -656,7 +656,7 @@ Constructs PostContentResponse's fields from required parameters
 
 ``` purescript
 newtype PostTextRequest
-  = PostTextRequest { botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: NullOrUndefined (StringMap), requestAttributes :: NullOrUndefined (StringMap), inputText :: Text }
+  = PostTextRequest { botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: Maybe (StringMap), requestAttributes :: Maybe (StringMap), inputText :: Text }
 ```
 
 ##### Instances
@@ -679,7 +679,7 @@ Constructs PostTextRequest from required parameters
 #### `newPostTextRequest'`
 
 ``` purescript
-newPostTextRequest' :: BotAlias -> BotName -> Text -> UserId -> ({ botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: NullOrUndefined (StringMap), requestAttributes :: NullOrUndefined (StringMap), inputText :: Text } -> { botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: NullOrUndefined (StringMap), requestAttributes :: NullOrUndefined (StringMap), inputText :: Text }) -> PostTextRequest
+newPostTextRequest' :: BotAlias -> BotName -> Text -> UserId -> ({ botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: Maybe (StringMap), requestAttributes :: Maybe (StringMap), inputText :: Text } -> { botName :: BotName, botAlias :: BotAlias, userId :: UserId, sessionAttributes :: Maybe (StringMap), requestAttributes :: Maybe (StringMap), inputText :: Text }) -> PostTextRequest
 ```
 
 Constructs PostTextRequest's fields from required parameters
@@ -688,7 +688,7 @@ Constructs PostTextRequest's fields from required parameters
 
 ``` purescript
 newtype PostTextResponse
-  = PostTextResponse { intentName :: NullOrUndefined (IntentName), slots :: NullOrUndefined (StringMap), sessionAttributes :: NullOrUndefined (StringMap), message :: NullOrUndefined (Text), messageFormat :: NullOrUndefined (MessageFormatType), dialogState :: NullOrUndefined (DialogState), slotToElicit :: NullOrUndefined (String), responseCard :: NullOrUndefined (ResponseCard) }
+  = PostTextResponse { intentName :: Maybe (IntentName), slots :: Maybe (StringMap), sessionAttributes :: Maybe (StringMap), message :: Maybe (Text), messageFormat :: Maybe (MessageFormatType), dialogState :: Maybe (DialogState), slotToElicit :: Maybe (String), responseCard :: Maybe (ResponseCard) }
 ```
 
 ##### Instances
@@ -711,7 +711,7 @@ Constructs PostTextResponse from required parameters
 #### `newPostTextResponse'`
 
 ``` purescript
-newPostTextResponse' :: ({ intentName :: NullOrUndefined (IntentName), slots :: NullOrUndefined (StringMap), sessionAttributes :: NullOrUndefined (StringMap), message :: NullOrUndefined (Text), messageFormat :: NullOrUndefined (MessageFormatType), dialogState :: NullOrUndefined (DialogState), slotToElicit :: NullOrUndefined (String), responseCard :: NullOrUndefined (ResponseCard) } -> { intentName :: NullOrUndefined (IntentName), slots :: NullOrUndefined (StringMap), sessionAttributes :: NullOrUndefined (StringMap), message :: NullOrUndefined (Text), messageFormat :: NullOrUndefined (MessageFormatType), dialogState :: NullOrUndefined (DialogState), slotToElicit :: NullOrUndefined (String), responseCard :: NullOrUndefined (ResponseCard) }) -> PostTextResponse
+newPostTextResponse' :: ({ intentName :: Maybe (IntentName), slots :: Maybe (StringMap), sessionAttributes :: Maybe (StringMap), message :: Maybe (Text), messageFormat :: Maybe (MessageFormatType), dialogState :: Maybe (DialogState), slotToElicit :: Maybe (String), responseCard :: Maybe (ResponseCard) } -> { intentName :: Maybe (IntentName), slots :: Maybe (StringMap), sessionAttributes :: Maybe (StringMap), message :: Maybe (Text), messageFormat :: Maybe (MessageFormatType), dialogState :: Maybe (DialogState), slotToElicit :: Maybe (String), responseCard :: Maybe (ResponseCard) }) -> PostTextResponse
 ```
 
 Constructs PostTextResponse's fields from required parameters
@@ -720,7 +720,7 @@ Constructs PostTextResponse's fields from required parameters
 
 ``` purescript
 newtype RequestTimeoutException
-  = RequestTimeoutException { message :: NullOrUndefined (String) }
+  = RequestTimeoutException { message :: Maybe (String) }
 ```
 
 <p>The input speech is too long.</p>
@@ -745,7 +745,7 @@ Constructs RequestTimeoutException from required parameters
 #### `newRequestTimeoutException'`
 
 ``` purescript
-newRequestTimeoutException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> RequestTimeoutException
+newRequestTimeoutException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> RequestTimeoutException
 ```
 
 Constructs RequestTimeoutException's fields from required parameters
@@ -754,7 +754,7 @@ Constructs RequestTimeoutException's fields from required parameters
 
 ``` purescript
 newtype ResponseCard
-  = ResponseCard { version :: NullOrUndefined (String), contentType :: NullOrUndefined (ContentType), genericAttachments :: NullOrUndefined (GenericAttachmentList') }
+  = ResponseCard { version :: Maybe (String), contentType :: Maybe (ContentType), genericAttachments :: Maybe (GenericAttachmentList') }
 ```
 
 <p>If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).</p>
@@ -779,7 +779,7 @@ Constructs ResponseCard from required parameters
 #### `newResponseCard'`
 
 ``` purescript
-newResponseCard' :: ({ version :: NullOrUndefined (String), contentType :: NullOrUndefined (ContentType), genericAttachments :: NullOrUndefined (GenericAttachmentList') } -> { version :: NullOrUndefined (String), contentType :: NullOrUndefined (ContentType), genericAttachments :: NullOrUndefined (GenericAttachmentList') }) -> ResponseCard
+newResponseCard' :: ({ version :: Maybe (String), contentType :: Maybe (ContentType), genericAttachments :: Maybe (GenericAttachmentList') } -> { version :: Maybe (String), contentType :: Maybe (ContentType), genericAttachments :: Maybe (GenericAttachmentList') }) -> ResponseCard
 ```
 
 Constructs ResponseCard's fields from required parameters
@@ -852,7 +852,7 @@ Encode Text
 
 ``` purescript
 newtype UnsupportedMediaTypeException
-  = UnsupportedMediaTypeException { message :: NullOrUndefined (String) }
+  = UnsupportedMediaTypeException { message :: Maybe (String) }
 ```
 
 <p>The Content-Type header (<code>PostContent</code> API) has an invalid value. </p>
@@ -877,7 +877,7 @@ Constructs UnsupportedMediaTypeException from required parameters
 #### `newUnsupportedMediaTypeException'`
 
 ``` purescript
-newUnsupportedMediaTypeException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> UnsupportedMediaTypeException
+newUnsupportedMediaTypeException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> UnsupportedMediaTypeException
 ```
 
 Constructs UnsupportedMediaTypeException's fields from required parameters
